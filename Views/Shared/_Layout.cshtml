@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Üniversite</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Universite.styles.css" asp-append-version="true" />
+
+    @RenderSection("Styles", required: false)
+
+    <!-- Yukarıda verdiğim CSS kodu -->
+    <style>
+        .navbar-brand,
+        .nav-link {
+            font-size: 20px; /* Buton ve navbar metin boyutu */
+            padding: 10px 20px; /* İstenirse iç boşluk ayarı */
+        }
+
+        .search-form {
+            margin-left: auto; /* Arama kutusunu sağa yasla */
+        }
+    </style>
+</head>
+
+<body>
+    <partial name="_header"></partial>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+            <div class="col-md-3">
+                <partial name="_Sidebar"></partial>
+            </div>
+        </div>
+    </div>
+
+    <partial name="_footer"></partial>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

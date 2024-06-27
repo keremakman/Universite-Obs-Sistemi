@@ -1,0 +1,80 @@
+@model Fakulteler
+@{
+    ViewData["Title"] = "FakulteEkle";
+}
+
+<h1 class="my-4">Fakülte Ekle</h1>
+
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <form asp-action="FakulteEkle" asp-controller="Home" method="post">
+            <div class="mb-3">
+                <label asp-for="FakulteAd" class="form-label">Fakülte Adı</label>
+                <input class="form-control" asp-for="FakulteAd">
+            </div>
+            <button type="submit" class="btn btn-primary">Ekle</button>
+        </form>
+    </div>
+</div>
+   <style>
+    .navbar-brand {
+        background-image: url('/okü.png');
+        background-size: 100px auto; /* Genişlik 100px, yükseklik otomatik ayarlansın */
+        background-repeat: no-repeat;
+        width: 300px; /* İstediğiniz genişlik */
+        height: 100px; /* İstediğiniz yükseklik */
+        display: block;
+        text-indent: -9999px;
+        background-position: center; /* Logoyu yatayda ortala */
+    }
+</style>
+@section Styles {
+    <style>
+        body {
+            background-color: #f8f9fa; /* Sayfa arka plan rengi */
+            background-image: url('/bg.jpg'); /* Sayfa arka plan resmi */
+            background-size: cover; /* Resmi kaplama */
+            background-position: center; /* Resmi ortala */
+            color: #333; /* Metin rengi */
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Gölgelendirme efekti */
+            background-color: rgba(255, 255, 255, 0.9); /* Kart arka plan rengi ve opaklık */
+            color: #333; /* Metin rengi */
+        }
+
+        .card-header {
+            background-color: #007bff; /* Kart başlık arka plan rengi */
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-weight: bold;
+            color: #fff; /* Başlık metin rengi */
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #333; /* Form etiket metin rengi */
+        }
+
+        .btn-primary {
+            background-color: #ff9900; /* Turuncu buton rengi */
+            border-color: #ff9900;
+            color: #fff; /* Buton metin rengi */
+        }
+
+        .btn-primary:hover {
+            background-color: #cc7a00; /* Buton hover rengi */
+            border-color: #cc7a00;
+            color: #fff; /* Buton hover metin rengi */
+        }
+    </style>
+
+}

@@ -1,0 +1,26 @@
+@model Universite.Models.Bolumler
+
+<h1>Bölüm Düzenle</h1>
+
+<form asp-action="EditBolum" asp-controller="Home" method="post">
+    <input type="hidden" asp-for="BolumId" />
+    
+    <div class="form-group">
+        <label asp-for="FakulteId" class="control-label"></label>
+        <select asp-for="FakulteId" class="form-control" asp-items="ViewBag.Fakulteler"></select>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="BolumAd" class="control-label"></label>
+        <input asp-for="BolumAd" class="form-control" />
+        <span asp-validation-for="BolumAd" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+
+<a asp-action="Index">Geri Dön</a>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
